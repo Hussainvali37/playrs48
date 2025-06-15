@@ -1,0 +1,772 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>player$| Secure Crypto Investments</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0ea5e9;
+            --accent: #8b5cf6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo i {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.15) 0%, transparent 40%);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #60a5fa, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #cbd5e1;
+        }
+        
+        .highlight {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            width: 200px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+        
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(37, 99, 235, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon i {
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Dashboard Demo */
+        .dashboard {
+            padding: 80px 0;
+            background: radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+        }
+        
+        .dashboard-container {
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .wallet-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .wallet-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(14, 165, 233, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .wallet-icon i {
+            font-size: 20px;
+            color: var(--secondary);
+        }
+        
+        .wallet-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .wallet-details p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+        
+        .timer {
+            background: rgba(245, 158, 11, 0.15);
+            color: #f59e0b;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .dashboard-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .deposit-info {
+            margin-bottom: 20px;
+        }
+        
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 20px 0;
+            color: var(--accent);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(14, 165, 233, 0.1);
+        }
+        
+        /* Risk Section */
+        .risk {
+            padding: 80px 0;
+        }
+        
+        .risk-content {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+        
+        .risk-content h3 {
+            color: var(--danger);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .risk-content ul {
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        
+        .risk-content li {
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(148, 163, 184, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>CryptoYield Pro</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">Dashboard</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <button class="cta-button">Connect Wallet</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Maximize Your Crypto Returns</h1>
+            <p>Earn up to 150% returns on your USDT investments through our secure, transparent platform powered by blockchain technology.</p>
+            
+            <div class="highlight">
+                <i class="fas fa-bolt"></i> Limited Time Offer: 48-Hour Deposit Window
+            </div>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>150%</h3>
+                    <p>Average Returns</p>
+                </div>
+                <div class="stat-card">
+                    <h3>48h</h3>
+                    <p>Deposit Window</p>
+                </div>
+                <div class="stat-card">
+                    <h3>$10</h3>
+                    <p>Minimum Deposit</p>
+                </div>
+                <div class="stat-card">
+                    <h3>BEP-20</h3>
+                    <p>Network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Our streamlined process makes investing simple and secure</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Connect Wallet</h3>
+                    <p>Securely connect your MetaMask wallet to get started. We support all major Web3 wallets.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-transfer"></i>
+                    </div>
+                    <h3>Deposit USDT</h3>
+                    <p>Deposit a minimum of 10 USDT via BEP-20 network within 48 hours to qualify for returns.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Earn Returns</h3>
+                    <p>Receive 150% returns on your deposited amount. Watch your investment grow in real-time.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Withdraw Profits</h3>
+                    <p>Withdraw your capital and profits at any time directly to your connected wallet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Demo -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="section-title">
+                <h2>Investment Dashboard</h2>
+                <p>Monitor and manage your investments in real-time</p>
+            </div>
+            
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <div class="wallet-info">
+                        <div class="wallet-icon">
+                            <i class="fab fa-ethereum"></i>
+                        </div>
+                        <div class="wallet-details">
+                            <h3>MetaMask Wallet</h3>
+                            <p>0x742d35...Cc6634</p>
+                        </div>
+                    </div>
+                    <div class="timer">
+                        <i class="fas fa-clock"></i> 36:24:15
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-title">
+                            <i class="fas fa-arrow-down"></i>
+                            <h3>Deposit Funds</h3>
+                        </div>
+                        
+                        <div class="deposit-info">
+                            <div class="info-row">
+                                <span>Network:</span>
+                                <span>Binance Smart Chain (BEP-20)</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Minimum Deposit:</span>
+                                <span>10 USDT</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Deposit Address:</span>
+                                <span>0xA7c61d7D75ee22F9a765d455e3B35Db8C520e46b</span>
+                            </div>
+                        </div>
+                        
+                        <div class="amount">0.00 USDT</div>
+                        <p>Deposited Amount</p>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-primary">Copy Deposit Address</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-title">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Your Returns</h3>
+                        </div>
+                        
+                        <div class="deposit-info">
+                            <div class="info-row">
+                                <span>Return Rate:</span>
+                                <span>150%</span>
+                            </div>
+                            <div class="info-row">
+                                <span>Time Until Returns:</span>
+                                <span>11:24:15</span>
+                            </div>
+                        </div>
+                        
+                        <div class="amount">0.00 USDT</div>
+                        <p>Estimated Returns</p>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-primary">Withdraw Returns</button>
+                            <button class="btn btn-secondary">Transaction History</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Awareness -->
+    <section class="risk">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transparency & Risk Awareness</h2>
+                <p>We prioritize security and informed investing</p>
+            </div>
+            
+            <div class="risk-content">
+                <h3><i class="fas fa-exclamation-triangle"></i> Important Investment Notice</h3>
+                <p>This platform operates as a high-yield investment program (HYIP) and carries significant risks. Cryptocurrency investments are volatile and may result in partial or total loss of capital.</p>
+                
+                <ul>
+                    <li>All investments carry inherent risk - only invest what you can afford to lose</li>
+                    <li>Returns are not guaranteed and depend on market performance</li>
+                    <li>This is not financial advice - conduct your own research before investing</li>
+                    <li>Platform utilizes audited smart contracts for transparency</li>
+                    <li>KYC verification required for withdrawals over $1,000</li>
+                </ul>
+                
+                <p>By using this platform, you acknowledge and accept these risks. Past performance is not indicative of future results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>CryptoYield Pro</span>
+                    </div>
+                    <p style="margin: 20px 0; color: #94a3b8;">Secure, transparent cryptocurrency investment platform powered by blockchain technology.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Platform</h4>
+                    <div class="footer-links">
+                        <a href="#">Dashboard</a>
+                        <a href="#">How It Works</a>
+                        <a href="#">Investment Plans</a>
+                        <a href="#">Smart Contract</a>
+                        <a href="#">Audit Report</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <div class="footer-links">
+                        <a href="#">Documentation</a>
+                        <a href="#">Tutorials</a>
+                        <a href="#">Market Analysis</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Support</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <div class="footer-links">
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Risk Disclosure</a>
+                        <a href="#">KYC Policy</a>
+                        <a href="#">AML Policy</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 player$. All rights reserved. This is a demonstration platform only.</p>
+                <p style="margin-top: 10px;">Cryptocurrency investments are highly speculative and involve substantial risk. Only invest what you can afford to lose.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Timer functionality
+        function updateTimer() {
+            const timerElement = document.querySelector('.timer');
+            if (timerElement) {
+                // For demo purposes, we'll just show a static time
+                timerElement.innerHTML = '<i class="fas fa-clock"></i> 36:24:15';
+            }
+        }
+        
+        // Connect Wallet button functionality
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            alert('Wallet connection functionality would be implemented here. In a real application, this would connect to MetaMask or another Web3 wallet.');
+        });
+        
+        // Copy Deposit Address
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            alert('Deposit address copied to clipboard: 0xA7c61d7D75ee22F9a765d455e3B35Db8C520e46b );
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTimer();
+        });
+    </script>
+</body>
+</html>
+
+
